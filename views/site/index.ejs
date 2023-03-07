@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("templates/_header") %>
+
+<body>
+  
+  <%- include("templates/_navbar") %>
+  
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Furkan Sade Uckun</h1>
+      <p>I'm <span class="typed" data-typed-items="Junior Software Developer!"></span></p>
+      <div class="social-links">
+        <a href="<%= socialMedia.linkedin %>" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="<%= socialMedia.github %>" class="github"><i class="bi bi-github"></i></a>
+        <a href="<%= socialMedia.twitter %>" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="<%= socialMedia.youtube %>" class="youtube"><i class="bi bi-youtube"></i></a>
+        <a href="<%= socialMedia.instagram %>" class="instagram"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <img src="/site/img/profile.jpg" class="img-fluid" alt="" style="border-radius: 5px;">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content text-center">
+            <h3>Junior Software Developer</h3>
+            
+            <div class="row mt-4">
+              <%- about.aboutContent %>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Skills</h2>
+        </div>
+
+        <div class="row skills-content">
+
+          <h4 class="mt-1">Programming Languages and Databases</h4>
+          <div class="social-links mt-1">
+            <a href="#!"><img src="./site/img/logos/golang1.png" alt=""></a>
+            <a href="#!"><img src=".//site/img/logos/nodejs.png" alt="NodeJS"></a> 
+            <a href="#!"><img src="./site/img/logos/mongodb1.png" alt=""> </a>
+            <a href="#!"><img src="./site/img/logos/postgresql.png" alt=""> </a>
+          </div>
+
+          <h4 class="mt-5">Frameworks and Tools</h4>
+          <div class="social-links mt-1">
+            <a href="#!"><img src="./site/img/logos/html.png" alt=""></a> 
+            <a href="#!"><img src="./site/img/logos/css.png" alt="NodeJS"></a> 
+            <a href="#!"><img src="./site/img/logos/bootstrap.png" alt=""></a> 
+            <a href="#!"><img src="./site/img/logos/expressjs.png" alt=""></a> 
+            <a href="#!"><img src="./site/img/logos/linux.png" alt=""></a> 
+            <a href="#!"><img src="./site/img/logos/git.png" alt=""></a> 
+            <a href="#!"><img src="./site/img/logos/figma.png" alt=""></a> 
+            <a href="#!"><img src="./site/img/logos/photoshop.png" alt=""></a> 
+            <a href="#!"><img src="./site/img/logos/canva.png" alt=""></a> 
+            <a href="#!"><img src="./site/img/logos/movavi.png" alt=""></a> 
+          </div>
+
+          
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            
+
+            <h3 class="resume-title">Education</h3>
+            <% for(let i = 0; i < resumes.length; i++) { %>
+              <% if(resumes[i].school) { %>
+              <div class="resume-item">
+                <h4><%= resumes[i].faculty %></h4>
+                <h5><%= resumes[i].eduStartedYear %> - <%= resumes[i].eduEndYear %></h5>
+                <p><em><%= resumes[i].school %>, <%= resumes[i].country %></em></p>
+              </div>
+              <% } %>
+            <% } %>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="resume-title">Professional Experience</h3>
+            <% for(let i = 0; i < resumes.length; i++) { %>
+              <% if(resumes[i].company) { %>
+            <div class="resume-item">
+              <h4><%= resumes[i].jobTitle %></h4>
+              <h5><%= resumes[i].expStartedYear %> - <%= resumes[i].expEndYear %></h5>
+              <p><em><%= resumes[i].company %></em></p>
+              <p><strong><%= resumes[i].language %></strong></p>
+              <p><%= resumes[i].description %></p>
+            </div>
+            <% } %>
+            <% } %>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+    <!-- ======= Certificates Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Certificates</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-success">Achievement</li>
+              <li data-filter=".filter-part">Participation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <% for(let i = 0; i < certificates.length; i++) { %>
+
+          <div class="col-lg-4 col-md-6 portfolio-item <%= certificates[i].certificateType %>">
+            <div class="portfolio-wrap">
+              <img src="<%= certificates[i].certificateImage %>" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                
+                <a href="<%= certificates[i].certificateImage %>" data-gallery="portfolioGallery" class="portfolio-lightbox" style="text-decoration: none;">
+                  <h4><%= certificates[i].certificateName %></h4>
+                </a>
+              
+              </div>
+            </div>
+          </div>
+
+          <% } %>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Projects Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Projects</h2>
+        </div>
+
+        <div class="row">
+          <% for(let i = 0; i < projects.length; i++) { %>
+          <div class="col-lg-4 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+            <a href="https://<%= projects[i].projectURL %>" target="_blank">
+            <div class="icon-box iconbox-teal">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,566.797414625762C385.7384707136149,576.1784315230908,478.7894351017131,552.8928747891023,531.9192734346935,484.94944893311C584.6109503024035,417.5663521118492,582.489472248146,322.67544863468447,553.9536738515405,242.03673114598146C529.1557734026468,171.96086150256528,465.24506316201064,127.66468636344209,395.9583748389544,100.7403814666027C334.2173773831606,76.7482773500951,269.4350130405921,84.62216499799875,207.1952322260088,107.2889140133804C132.92018162631612,134.33871894543012,41.79353780512637,160.00259165414826,22.644507872594943,236.69541883565114C3.319112789854554,314.0945973066697,72.72355303640163,379.243833228382,124.04198916343866,440.3218312028393C172.9286146004772,498.5055451809895,224.45579914871206,558.5317968840102,300,566.797414625762"></path>
+                </svg>
+                <i class="<%= projects[i].projectIcon %>"></i>
+              </div>
+              <h4><a href="https://<%= projects[i].projectURL %>" target="_blank"><%= projects[i].projectName %></a></h4>
+              <p><%= projects[i].projectDescription %></p>
+            </div>
+          </a>
+          </div>
+          <% } %>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+  </main><!-- End #main -->
+
+  <%- include("templates/_footer") %>
+  
+  
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+  <%- include("templates/_script") %>
+  
+
+</body>
+
+</html>

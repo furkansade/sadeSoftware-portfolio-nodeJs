@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("templates/_header") %>
+
+    <body id="page-top">
+
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <%- include("templates/_sidebar") %>
+
+                <!-- Content Wrapper -->
+                <div id="content-wrapper" class="d-flex flex-column">
+
+                    <!-- Main Content -->
+                    <div id="content">
+
+                        <%- include("templates/_navbar") %>
+
+
+
+                        <!-- Begin Page Content -->
+                        <div class="container-fluid">
+                            <!-- Content Row -->
+                            <div class="row">
+                                <!-- Content Column -->
+                                <div class="col-lg-12 mb-4">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h6 class="m-0 font-weight-bold text-primary">Your Projects</h6>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <a data-target="#addProject" data-toggle="modal" 
+                                                        class="float-right btn btn-sm btn-outline-success mx-2 text-dark">
+                                                        <i class="bi bi-plus"></i>
+                                                        New Project!
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Project Name</th>
+                                                    <th scope="col">Project Description</th>
+                                                    <th scope="col">Project URL</th>
+                                                    <th scope="col">Project Icon</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <% for(let i = 0; i < projects.length; i++) { %>
+                                                <tr>
+                                                    <th scope="row"><%= projects[i]._id %></th>
+                                                    <td><%= projects[i].projectName %></td>
+                                                    <td><%= projects[i].projectDescription %></td>
+                                                    <td>
+                                                        <a class="btn btn-sm btn-outline-info text-dark" target="_blank" href="https://<%= projects[i].projectURL %>">Link</a>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-dark disabled">
+                                                            <i class="<%= projects[i].projectIcon %>"></i>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/admin/project/<%= projects[i]._id %>?_method=DELETE"  class="btn btn-sm btn-outline-danger">
+                                                            <i class="bi bi-trash"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <% } %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.container-fluid -->
+
+                    </div>
+                    <!-- End of Main Content -->
+
+                    <div class="modal fade" id="addProject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">New Project!</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+
+                              <form method="POST" action="/admin/project">
+
+                                <div class="form-group">
+                                  <input type="text" class="form-control" name="projectName" placeholder="Project Name">
+                                </div>
+
+                                <div class="form-group">
+                                  <input type="text" class="form-control" name="projectDescription" placeholder="Project Description" maxlength="80">
+                                </div>
+
+                                <div class="form-group">
+                                  <input type="text" class="form-control" name="projectURL" placeholder="Project URL">
+                                  <small>www.github.com/...</small>
+                                </div>
+
+                                <div class="form-group">
+                                  <input type="text" class="form-control" name="projectIcon" placeholder="Project Icon Code">
+                                  <small>bi bi-person</small>
+                                </div>
+
+                            
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close!</button>
+                                <button type="submit" class="btn btn-outline-success">Save!</button>
+                            </div>
+                        </form>
+                          </div>
+                        </div>
+                      </div>
+
+                    <%- include("templates/_footer") %>
+
+                </div>
+                <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <%- include("templates/_script") %>
+
+
+
+    </body>
+
+</html>
