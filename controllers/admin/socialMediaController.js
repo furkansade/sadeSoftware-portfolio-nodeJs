@@ -8,7 +8,7 @@ exports.createSocialMedia = async (req, res) => {
 
 exports.updateSocialMedia = async (req, res) => {
   const social = await SocialMedia.findOneAndUpdate({
-    _id: "6403ba278cc447da9686e347",
+    _id: "6570203a1e74595b30e5c90e",
   });
   social.linkedin = req.body.linkedin;
   social.github = req.body.github;

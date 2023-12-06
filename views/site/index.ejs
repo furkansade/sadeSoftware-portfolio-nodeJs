@@ -14,11 +14,21 @@
       <h1>Furkan Sade Uckun</h1>
       <p>I'm <span class="typed" data-typed-items="Junior Software Developer!"></span></p>
       <div class="social-links">
-        <a href="<%= socialMedia.linkedin %>" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        <a href="<%= socialMedia.github %>" class="github"><i class="bi bi-github"></i></a>
-        <a href="<%= socialMedia.twitter %>" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="<%= socialMedia.youtube %>" class="youtube"><i class="bi bi-youtube"></i></a>
-        <a href="<%= socialMedia.instagram %>" class="instagram"><i class="bi bi-instagram"></i></a>
+        <% if (socialMedia && socialMedia.linkedin) { %>
+          <a href="<%= socialMedia.linkedin %>" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <% } %>
+      
+        <% if (socialMedia && socialMedia.github) { %>
+          <a href="<%= socialMedia.github %>" class="github"><i class="bi bi-github"></i></a>
+        <% } %>
+      
+        <% if (socialMedia && socialMedia.twitter) { %>
+          <a href="<%= socialMedia.twitter %>" class="twitter"><i class="bi bi-twitter"></i></a>
+        <% } %>
+      
+        <% if (socialMedia && socialMedia.youtube) { %>
+          <a href="<%= socialMedia.youtube %>" class="youtube"><i class="bi bi-youtube"></i></a>
+        <% } %>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -41,7 +51,9 @@
             <h3>Junior Software Developer</h3>
             
             <div class="row mt-4">
-              <%- about.aboutContent %>
+              <% if (about && about.aboutContent) { %>
+                <%- about.aboutContent %>
+              <% } %>
           </div>
         </div>
 

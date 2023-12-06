@@ -12,4 +12,5 @@ const SocialMediaSchema = new Schema({
 
 const SocialMedia = mongoose.model("SocialMedia", SocialMediaSchema);
 
+
 module.exports = SocialMedia;

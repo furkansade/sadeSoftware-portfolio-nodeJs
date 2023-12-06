@@ -42,6 +42,7 @@
                                     <div class="card shadow mb-4">
 
                                         <div class="container">
+                                            <% if (socialMedia) { %>
                                             <form method="POST" action="/admin/social-media/<%= socialMedia._id %>?_method=PUT">
                                               
                                                 <div class="form-group row mt-3">
@@ -82,6 +83,7 @@
 
                                                 <button type="submit" class="btn btn-warning mb-3 w-100">Update!</button>
                                             </form>
+                                            <% } %>
 
                                         </div>
                                     </div>

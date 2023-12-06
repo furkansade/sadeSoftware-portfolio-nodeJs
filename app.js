@@ -3,6 +3,13 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 const fileUpload = require("express-fileupload");
 const methodOverride = require("method-override")
+const dotenv = require("dotenv");
+const connectToDatabase = require("./db.js");
+
+
+dotenv.config();
+connectToDatabase();
+
 
 const pageRoute = require("./routes/site/pageRoute");
 
@@ -20,18 +27,19 @@ const About = require("./models/About");
 
 const app = express();
 
-mongoose.connect("mongodb://127.0.0.1/sadeResumeSite").then(() => {
-  console.log("connected database!");
-});
+// mongoose.connect("mongodb://127.0.0.1/sadeResumeSite").then(() => {
+//   console.log("connected database!");
+// });
 
 app.set("view engine", "ejs");
 
 async (req, res) => {
-  global.socialMedia = await SocialMedia.findOne({ _id: "6403ba278cc447da9686e347"});
+  global.socialMedia = await SocialMedia.findOne({ _id: "6570362cc0cfad344e8bffc7"});
 }
 
+
 async (req, res) => {
-  global.about = await About.findOne({ _id: "64045908426259cb539646be"});
+  global.about = await About.findOne({ _id: "657020b8df97ecbd7325e824"});
 }
 
 app.use(express.static("public"));
