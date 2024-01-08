@@ -8,7 +8,7 @@ exports.createAbout = async (req, res) => {
 
 exports.updateAbout = async (req, res) => {
   const about = await About.findOneAndUpdate({
-    _id: "64045908426259cb539646be",
+    _id: "659c1b75c4230050eac89e89",
   });
   
   about.aboutContent = req.body.aboutContent;

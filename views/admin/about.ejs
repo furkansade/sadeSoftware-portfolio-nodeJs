@@ -37,11 +37,12 @@
                                             <div class="card-header py-3">
                                                 <h6 class="m-0 font-weight-bold text-primary">About Content</h6>
                                             </div>
-
-                                            <form method="POST" action="/admin/about/<%= about._id %>?_method=PUT">
+                                                <form method="POST" action="/admin/about/<%= about._id %>?_method=PUT">
 
                                                 <div class="form-group">
-                                                    <textarea id="summernote" name="aboutContent" class="form-control"><%= about.aboutContent %></textarea>
+
+                                                        <textarea id="summernote" name="aboutContent" class="form-control"><%= about.aboutContent %></textarea>
+                                             
                                                 </div>
 
                                                 <div class="form-group">

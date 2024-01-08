@@ -6,11 +6,11 @@ const Resume = require("../../models/Resume");
 
 exports.getHomePage = async (req, res) => {
   const socialMedia = await SocialMedia.findOne({
-    _id: "6403ba278cc447da9686e347",
+    _id: "659c1c4c32ccc4411ab441d0",
   });
   const projects = await Project.find();
   const certificates = await Certificate.find();
-  const about = await About.findOne({ _id: "64045908426259cb539646be" });
+  const about = await About.findOne({ _id: "659c1b75c4230050eac89e89" });
   const resumes = await Resume.find();
 
   res.status(200).render("site/index", {

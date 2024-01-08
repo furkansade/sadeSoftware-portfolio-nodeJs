@@ -12,7 +12,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
       <h1>Furkan Sade Uckun</h1>
-      <p>I'm <span class="typed" data-typed-items="Junior Software Developer!"></span></p>
+      <p>I'm <span class="typed" data-typed-items="Full Stack Developer!"></span></p>
       <div class="social-links">
         <% if (socialMedia && socialMedia.linkedin) { %>
           <a href="<%= socialMedia.linkedin %>" class="linkedin"><i class="bi bi-linkedin"></i></a>
@@ -47,12 +47,19 @@
           <div class="col-lg-4">
             <img src="/site/img/profile.jpg" class="img-fluid" alt="" style="border-radius: 5px;">
           </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content text-center">
-            <h3>Junior Software Developer</h3>
+          <div class="col-lg-8 pt-4 pt-lg-0 content text-left">
+            <h3>Full Stack Developer</h3>
             
             <div class="row mt-4">
               <% if (about && about.aboutContent) { %>
                 <%- about.aboutContent %>
+              <% } else { %>
+                <p>Merhaba, ben Sade, kariyerime <strong>Full Stack Developer</strong> olarak devam eden web programlama tutkunuyum.</p>
+                <p>YKS'de diş hekimliği fakültesini kazanmama rağmen programlama tutkumun peşinden gitmek için Nisan 2021'de okulu bırakmaya karar verdim. O zamandan beri <strong>BTK Akademi başta olmak üzere bootcamp, workshop ve konferanslara katılarak</strong> kendimi programlama becerilerimi geliştirmeye adadım.</p>
+                <p>Her gün algoritmik problemlerle kendimi zorlayarak proje planlama becerilerimi, <strong>algoritmik düşünme ve problem çözme becerilerimi</strong> geliştirmeye odaklanıyorum.</p>
+                <p>Teknik becerilerimin yanı sıra <strong>takım liderliği ve yönetimi becerilerine sahibim ve iyi bir takım oyuncusuyum.</strong></p>
+                <p>Boş zamanlarımda, kişisel YouTube kanalımda öğrendiklerimi paylaştığım ve programlama problemlerini çözdüğüm <strong>öğretici videolar</strong> oluşturmaktan keyif alıyorum.</p>
+                <p>Web geliştirme konusunda tutkuluyum ve önümdeki fırsatlar konusunda heyecanlıyım. <strong>Çalışkan ve kendini işine adamış</strong> bir Full Stack Developer arıyorsanız, sizden haber almak isterim.</p>
               <% } %>
           </div>
         </div>
