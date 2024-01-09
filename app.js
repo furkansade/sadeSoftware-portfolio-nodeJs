@@ -3,6 +3,10 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 const fileUpload = require("express-fileupload");
 const methodOverride = require("method-override")
+const MongoStore = require("connect-mongo");
+const session = require("express-session");
+const flash = require("connect-flash");
+
 const dotenv = require("dotenv");
 const connectToDatabase = require("./db.js");
 
@@ -20,6 +24,7 @@ const certificateRoute = require("./routes/admin/certificateRoute");
 const socialMediaRoute = require("./routes/admin/socialMediaRoute");
 const aboutRoute = require("./routes/admin/aboutRoute");
 const resumeRoute = require("./routes/admin/resumeRoute");
+const authRoute = require("./routes/admin/authRoute");
 
 const SocialMedia = require("./models/SocialMedia")
 const About = require("./models/About");
@@ -42,9 +47,25 @@ async (req, res) => {
   global.about = await About.findOne({ _id: "659c1b75c4230050eac89e89"});
 }
 
+
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(
+  session({
+    secret: "my_keyboard-cat",
+    resave: false,
+    saveUninitialized: true,
+    store: MongoStore.create({
+      mongoUrl: process.env.DB_URI,
+    }),
+  })
+);
+app.use(flash());
+app.use((req, res, next) => {
+  res.locals.flashMessages = req.flash();
+  next();
+});
 app.use(fileUpload());
 app.use(
   methodOverride('_method', {
@@ -62,6 +83,7 @@ app.use("/admin/project", projectRoute);
 app.use("/admin/social-media", socialMediaRoute);
 app.use("/admin/about", aboutRoute);
 app.use("/admin/resume", resumeRoute);
+app.use("/admin/auth", authRoute);
 
 const PORT = 4000;
 app.listen(PORT, () => {

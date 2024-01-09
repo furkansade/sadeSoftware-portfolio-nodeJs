@@ -56,3 +56,9 @@ exports.getSocialMediaPage = async (req, res) => {
     socialMedia,
   });
 };
+
+exports.getLoginPage = async (req, res) => {
+  res.status(200).render("admin/adminLogin", {
+    pageName: "adminLogin",
+  });
+};
