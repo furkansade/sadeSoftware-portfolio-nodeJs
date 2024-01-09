@@ -3,10 +3,16 @@ const Project = require("../../models/Project");
 const SocialMedia = require("../../models/SocialMedia");
 const About = require("../../models/About");
 const Resume = require("../../models/Resume");
+const User = require("../../models/User");
 
 exports.getHomePage = async (req, res) => {
+
+  const user = await User.findOne({ _id: req.session.userID });
+
+
   res.status(200).render("admin/index", {
     pageName: "adminIndex",
+    user,
   });
 };
 
@@ -56,6 +62,13 @@ exports.getSocialMediaPage = async (req, res) => {
     socialMedia,
   });
 };
+
+exports.getSkillsPage = async (req, res) => {
+  
+  res.status(200).render("admin/skills", {
+    pageName: "skills",
+  });
+}
 
 exports.getLoginPage = async (req, res) => {
   res.status(200).render("admin/adminLogin", {

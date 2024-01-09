@@ -24,6 +24,16 @@ const UserSchema = new Schema({
         minlength: 4,
         maxlength: 1024
     },
+    reset: {
+        code: {
+            type: String,
+            default: null
+        },
+        time: {
+            type: Date,
+            default: null
+        }
+    }
 });
 
 UserSchema.pre("save", function (next) {

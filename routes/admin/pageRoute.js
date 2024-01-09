@@ -14,6 +14,7 @@ router.route("/certificates").get(authCheck, pageController.getCertificatesPage)
 router.route("/projects").get(authCheck, pageController.getProjectPage);
 router.route("/resume").get(authCheck, pageController.getResumePage);
 router.route("/social-media").get(authCheck, pageController.getSocialMediaPage);
+router.route("/skills").get(authCheck, pageController.getSkillsPage);
 router.route("/login").get(redirectMiddleware.redirectUser, pageController.getLoginPage);
 
 module.exports = router;
