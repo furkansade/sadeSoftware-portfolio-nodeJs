@@ -50,6 +50,7 @@
                                                         <th scope="col">#</th>
                                                         <th scope="col">Certificate Image</th>
                                                         <th scope="col">Certificate Name</th>
+                                                        <th scope="col">Certificate Provide</th>
                                                         <th scope="col">Certificate Type</th>
                                                         <th scope="col">Action</th>
                                                     </tr>
@@ -58,7 +59,7 @@
                                                     <% for(let i=0; i < certificates.length; i++) { %>
                                                         <tr>
                                                             <th scope="row">
-                                                                <%= certificates[i]._id %>
+                                                                <%= i+1 %>
                                                             </th>
                                                             <td>
                                                                 <a data-target="#lookImage<%= certificates[i]._id %>"
@@ -69,6 +70,9 @@
                                                             </td>
                                                             <td>
                                                                 <%= certificates[i].certificateName %>
+                                                            </td>
+                                                            <td>
+                                                                <%= certificates[i].certificateProvider %>
                                                             </td>
                                                             <td>
                                                                 <% if(certificates[i].certificateType === "filter-success") { %>
@@ -149,6 +153,11 @@
                                         <div class="form-group">
                                             <label>Certificate Name</label>
                                             <input type="text" name="certificateName" class="form-control">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Certificate Provider</label>
+                                            <input type="text" name="certificateProvider" class="form-control">
                                         </div>
 
 

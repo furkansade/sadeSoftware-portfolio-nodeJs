@@ -3,6 +3,7 @@ const Project = require("../../models/Project");
 const Certificate = require("../../models/Certificate");
 const About = require("../../models/About");
 const Resume = require("../../models/Resume");
+const Skiil = require("../../models/Skill");
 
 exports.getHomePage = async (req, res) => {
   const socialMedia = await SocialMedia.findOne({
@@ -12,6 +13,7 @@ exports.getHomePage = async (req, res) => {
   const certificates = await Certificate.find();
   const about = await About.findOne({ _id: "659c1b75c4230050eac89e89" });
   const resumes = await Resume.find();
+  const skills = await Skiil.find();
 
   res.status(200).render("site/index", {
     pageName: "index",
@@ -20,5 +22,6 @@ exports.getHomePage = async (req, res) => {
     certificates,
     about,
     resumes,
+    skills,
   });
 };

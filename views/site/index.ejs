@@ -83,24 +83,20 @@
 
           <h4 class="mt-1">Programming Languages and Databases</h4>
           <div class="social-links mt-1">
-            <a href="#!"><img src="./site/img/logos/golang1.png" alt=""></a>
-            <a href="#!"><img src=".//site/img/logos/nodejs.png" alt="NodeJS"></a> 
-            <a href="#!"><img src="./site/img/logos/mongodb1.png" alt=""> </a>
-            <a href="#!"><img src="./site/img/logos/postgresql.png" alt=""> </a>
+            <% for(let i = 0; i < skills.length; i++) { %>
+              <% if(skills[i].category == "Programming Language" || skills[i].category == "Database") { %>
+                <a href="#!"><img src="<%= skills[i].icon %>"  height="48px" width="auto" alt=""></a>
+              <% } %>
+            <% } %>
           </div>
 
           <h4 class="mt-5">Frameworks and Tools</h4>
           <div class="social-links mt-1">
-            <a href="#!"><img src="./site/img/logos/html.png" alt=""></a> 
-            <a href="#!"><img src="./site/img/logos/css.png" alt="NodeJS"></a> 
-            <a href="#!"><img src="./site/img/logos/bootstrap.png" alt=""></a> 
-            <a href="#!"><img src="./site/img/logos/expressjs.png" alt=""></a> 
-            <a href="#!"><img src="./site/img/logos/linux.png" alt=""></a> 
-            <a href="#!"><img src="./site/img/logos/git.png" alt=""></a> 
-            <a href="#!"><img src="./site/img/logos/figma.png" alt=""></a> 
-            <a href="#!"><img src="./site/img/logos/photoshop.png" alt=""></a> 
-            <a href="#!"><img src="./site/img/logos/canva.png" alt=""></a> 
-            <a href="#!"><img src="./site/img/logos/movavi.png" alt=""></a> 
+            <% for(let i = 0; i < skills.length; i++) { %>
+              <% if(skills[i].category == "Tool" || skills[i].category == "Framework") { %>
+                <a href="#!"><img src="<%= skills[i].icon %>" height="48px" width="auto" alt=""></a>
+              <% } %>
+            <% } %>
           </div>
 
           
@@ -223,7 +219,98 @@
         </div>
 
       </div>
-    </section><!-- End Services Section -->
+    </section><!-- End Projects Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact Me!</h2>
+        </div>
+
+        <div class="container">
+        <div class="row">
+          <div class="contact-image col-md-6">
+              <div class="text-left text-light">
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <p><i class="bi bi-geo-alt px-4"></i>San Francisco, CA 94126, USA</p>
+                    </li>
+
+                    <li>
+                        <p><i class="bi bi-telephone px-4"></i>+ 01 234 567 89</p>
+                    </li>
+
+                    <li>
+                        <p><i class="bi bi-envelope px-4"></i>contact@sadesoftware.com</p>
+                    </li>
+                </ul>
+            </div>
+          </div>
+        
+          
+            <div class="col-md-6">
+              <form method="POST" action="/admin/resume">
+
+                <div class="form-group mt-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                          <label for="">First Name</label>
+                            <input type="text" name="school" class="form-control"
+                                placeholder="First Name">
+                        </div>
+                        <div class="col-md-6">
+                          <label for="">Surname</label>
+                            <input type="text" name="country" class="form-control"
+                                placeholder="Surname">
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="form-group mt-5">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label for="">Email</label>
+                      <input type="email" name="eduStartedYear"
+                      class="form-control" placeholder="Email">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="">Phone Number</label>
+                      <input type="number" name="eduEndYear"
+                      class="form-control" placeholder="Phone Number">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group mt-5">
+                  <label for="">Subject</label>
+                    <input type="text" name="subject" class="form-control"
+                        placeholder="Subject">
+                </div>
+                
+                <div class="form-group mt-5">
+                  <label for="">Messages</label>
+                    <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="Write us a message..."></textarea>
+                </div>
+
+                <div class="form-group mt-3">
+                    <div class="row d-flex justify-content-center">
+                      <div class="col-md-4">
+                        <button type="submit" class="btn btn-outline-success w-100">Submit!</button>
+                      </div>
+                    </div>
+                </div>
+
+
+            </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
 
 
   </main><!-- End #main -->

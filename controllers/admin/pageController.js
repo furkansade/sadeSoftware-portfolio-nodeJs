@@ -1,6 +1,7 @@
 const Certificate = require("../../models/Certificate");
 const Project = require("../../models/Project");
 const SocialMedia = require("../../models/SocialMedia");
+const Skill = require("../../models/Skill");
 const About = require("../../models/About");
 const Resume = require("../../models/Resume");
 const User = require("../../models/User");
@@ -64,9 +65,12 @@ exports.getSocialMediaPage = async (req, res) => {
 };
 
 exports.getSkillsPage = async (req, res) => {
+
+  const skills = await Skill.find();
   
   res.status(200).render("admin/skills", {
     pageName: "skills",
+    skills
   });
 }
 

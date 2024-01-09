@@ -710,7 +710,7 @@ section {
   border-radius: 5px;
   padding: 10px 10px 10px 10px;
   margin: 0px 20px 0px 20px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .portfolio .portfolio-wrap .portfolio-info p {
@@ -769,6 +769,7 @@ section {
   transition: all ease-in-out 0.3s;
   background: #fff;
   box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+  height: 100%;
 }
 
 .services .icon-box .icon {
@@ -963,3 +964,28 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+.contact-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/admin/img/bg-01.jpg);
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.contact-image p i {
+  color: #F9D142;
+  font-size: 32px;
+}
+
+.contact-image p {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 10px;
+}
+

@@ -25,6 +25,7 @@ const socialMediaRoute = require("./routes/admin/socialMediaRoute");
 const aboutRoute = require("./routes/admin/aboutRoute");
 const resumeRoute = require("./routes/admin/resumeRoute");
 const authRoute = require("./routes/admin/authRoute");
+const skillRoute = require("./routes/admin/skillRoute");
 
 const SocialMedia = require("./models/SocialMedia")
 const About = require("./models/About");
@@ -84,6 +85,7 @@ app.use("/admin/social-media", socialMediaRoute);
 app.use("/admin/about", aboutRoute);
 app.use("/admin/resume", resumeRoute);
 app.use("/admin/auth", authRoute);
+app.use("/admin/skills", skillRoute);
 
 const PORT = 4000;
 app.listen(PORT, () => {

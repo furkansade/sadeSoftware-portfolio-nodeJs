@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const CertificateSchema = new Schema({
   certificateName: String,
   certificateImage: String,
+  certificateProvider: String,
   certificateType: String,
 });
 
