@@ -25,8 +25,8 @@ A ***portfolio / resume website*** that can be managed from an ***admin panel***
 
 ### Project Important Packages
 
-| Package | Install |
-| ------ | ------ |
+| Package |
+| ------ |
 | express |
-| ejs | 
-| mongoose | 
+| ejs |
+| mongoose |
