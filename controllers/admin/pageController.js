@@ -2,6 +2,7 @@ const Certificate = require("../../models/Certificate");
 const Project = require("../../models/Project");
 const SocialMedia = require("../../models/SocialMedia");
 const Skill = require("../../models/Skill");
+const Blog = require("../../models/Blog");
 const About = require("../../models/About");
 const Resume = require("../../models/Resume");
 const User = require("../../models/User");
@@ -72,7 +73,38 @@ exports.getSkillsPage = async (req, res) => {
     pageName: "skills",
     skills
   });
-}
+};
+
+
+
+exports.getBlogsPage = async (req, res) => {
+
+  const blogs = await Blog.find();
+
+  blogs.forEach((blog) => {
+    blog.description = blog.description.substring(0, 100) + "...";
+  }
+  );
+
+  res.status(200).render("admin/blogs/blogs", {
+    pageName: "blogs",
+    blogs,
+  });
+};
+
+exports.getCreateBlogPage = async (req, res) => {
+  res.status(200).render("admin/blogs/addBlog",{
+    pageName: "addBlog",
+  })
+};
+
+exports.getUpdateBlogPage = async (req, res) => {
+  res.status(200).render("admin/blogs/updateBlog",{
+    pageName: "updateBlog",
+  })
+};
+
+
 
 exports.getLoginPage = async (req, res) => {
   res.status(200).render("admin/adminLogin", {

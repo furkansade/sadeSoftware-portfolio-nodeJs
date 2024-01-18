@@ -15,6 +15,13 @@ router.route("/projects").get(authCheck, pageController.getProjectPage);
 router.route("/resume").get(authCheck, pageController.getResumePage);
 router.route("/social-media").get(authCheck, pageController.getSocialMediaPage);
 router.route("/skills").get(authCheck, pageController.getSkillsPage);
+
+router.route("/blogs").get(authCheck, pageController.getBlogsPage);
+router.route("/blog/create").get(authCheck, pageController.getCreateBlogPage);
+router.route("/blog/edit/:id").get(authCheck, pageController.getUpdateBlogPage);
+
+
 router.route("/login").get(redirectMiddleware.redirectUser, pageController.getLoginPage);
+
 
 module.exports = router;

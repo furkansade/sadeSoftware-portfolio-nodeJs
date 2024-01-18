@@ -158,7 +158,7 @@ h4 {
 
 @media (min-width: 991px) {
   #main {
-    margin-left: 100px;
+    /* margin-left: 100px; */
   }
 }
 
@@ -423,6 +423,11 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+
+#about{
+  background-color: #f7f8f9;
+}
+
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
@@ -499,8 +504,12 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
+
+#skills{
+  background-color: #fff;
+}
 .skills .progress {
   height: 60px;
   display: block;
@@ -541,6 +550,11 @@ section {
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
+
+#resume{
+  background-color: #f7f8f9;
+}
+
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
@@ -602,6 +616,11 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+
+#portfolio{
+  background-color: #fff;
+}
+
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
@@ -763,6 +782,11 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+
+#services{
+  background-color: #f7f8f9;
+}
+
 .services .icon-box {
   text-align: center;
   padding: 70px 20px 80px 20px;
@@ -898,6 +922,11 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+
+#contact{
+  background-color: #fff;
+}
+
 .contact .info {
   width: 100%;
   background: #fff;
