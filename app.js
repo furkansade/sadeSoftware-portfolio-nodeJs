@@ -90,7 +90,8 @@ app.use("/admin/auth", authRoute);
 app.use("/admin/skills", skillRoute);
 app.use("/admin/blogs", blogRoute);
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`listening port: ${PORT}`);
 });
+
