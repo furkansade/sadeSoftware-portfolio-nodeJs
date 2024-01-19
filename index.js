@@ -15,21 +15,21 @@ dotenv.config();
 connectToDatabase();
 
 
-const pageRoute = require("./routes/site/pageRoute");
+const pageRoute = require("./routes/site/pageRoute.js");
 
 // ADMIN
-const adminPageRoute = require("./routes/admin/pageRoute");
-const projectRoute = require("./routes/admin/projectRoute");
-const certificateRoute = require("./routes/admin/certificateRoute");
-const socialMediaRoute = require("./routes/admin/socialMediaRoute");
-const aboutRoute = require("./routes/admin/aboutRoute");
-const resumeRoute = require("./routes/admin/resumeRoute");
-const authRoute = require("./routes/admin/authRoute");
-const skillRoute = require("./routes/admin/skillRoute");
-const blogRoute = require("./routes/admin/blogRoute");
+const adminPageRoute = require("./routes/admin/pageRoute.js");
+const projectRoute = require("./routes/admin/projectRoute.js");
+const certificateRoute = require("./routes/admin/certificateRoute.js");
+const socialMediaRoute = require("./routes/admin/socialMediaRoute.js");
+const aboutRoute = require("./routes/admin/aboutRoute.js");
+const resumeRoute = require("./routes/admin/resumeRoute.js");
+const authRoute = require("./routes/admin/authRoute.js");
+const skillRoute = require("./routes/admin/skillRoute.js");
+const blogRoute = require("./routes/admin/blogRoute.js");
 
-const SocialMedia = require("./models/SocialMedia")
-const About = require("./models/About");
+const SocialMedia = require("./models/SocialMedia.js")
+const About = require("./models/About.js");
 
 
 const app = express();
