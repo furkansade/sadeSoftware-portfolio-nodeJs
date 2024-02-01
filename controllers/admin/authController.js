@@ -74,12 +74,10 @@ exports.forgetPassword = async (req, res) => {
       });
     }
 
-    const resetCodeBuffer = crypto.randomBytes(2); // 3 byte'lık bir rastgele veri oluştur
+    const resetCodeBuffer = crypto.randomBytes(2); 
 
-    // Buffer'ı rakamlara çevir
     const resetCode = parseInt(resetCodeBuffer.toString('hex'), 16);
 
-    // resetCode şu anda bir sayıdır, ihtiyacınıza göre stringe çevirebilirsiniz
     const resetCodeString = resetCode.toString();
 
     await sendMail({

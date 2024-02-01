@@ -41,12 +41,12 @@ const app = express();
 app.set("view engine", "ejs");
 
 async (req, res) => {
-  global.socialMedia = await SocialMedia.findOne({ _id: "659c1c4c32ccc4411ab441d0"});
+  global.socialMedia = await SocialMedia.findOne({});
 }
 
 
 async (req, res) => {
-  global.about = await About.findOne({ _id: "659c1b75c4230050eac89e89"});
+  global.about = await About.findOne({});
 }
 
 

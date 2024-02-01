@@ -22,7 +22,7 @@ SocialMediaSchema.pre("save", function (next) {
 
   Object.keys(platforms).forEach(platform => {
     if (this[platform]) {
-      // Kullanıcı adını özel link yapısı ile birleştir
+      // Concatenate username with custom link structure
       this[platform] = `${platforms[platform]}${this[platform]}`;
     }
   });
@@ -31,6 +31,18 @@ SocialMediaSchema.pre("save", function (next) {
 });
 
 const SocialMedia = mongoose.model("SocialMedia", SocialMediaSchema);
+
+SocialMedia.findOne({}).then((result) => {
+  if (!result) {
+    SocialMedia.create({
+      linkedin: "linkedin",
+      github: "github",
+      youtube: "@youtube",
+      instagram: "instagram",
+      twitter: "twitter",
+    });
+  }
+});
 
 
 module.exports = SocialMedia;

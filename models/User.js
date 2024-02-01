@@ -47,4 +47,19 @@ UserSchema.pre("save", function (next) {
 
 const User = mongoose.model("User", UserSchema);
 
+if (process.env.ADMIN_USERNAME && process.env.ADMIN_EMAIL && process.env.ADMIN_PASSWORD) {
+    User.findOne
+        ({ email: process.env.ADMIN_EMAIL })
+        .then(user => {
+            if (!user) {
+                User.create({
+                    username: process.env.ADMIN_USERNAME,
+                    email: process.env.ADMIN_EMAIL,
+                    password: process.env.ADMIN_PASSWORD
+                });
+            }
+        });
+}
+
+
 module.exports = User;
